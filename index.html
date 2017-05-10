@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Peercoin solo pool</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Peercoin solo pool</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Start Mining</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#support">Support</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" id="logo" src="img/logo.png" alt="logo">
+                    <div class="intro-text">
+                        <span class="name">Peercoin solo pool</span>
+                        <hr class="star-light">
+                        <p class="skills">Solo mining with immediate payouts</p>
+                    </div>
+                    <p>Mine directly to your address</p>
+                    <!--<small>1PSL24dCfmy3qTExQuaWCpSSRVmVgj2SsA<br/>PScript9dhNxV5xHGwwcjknh9sxe6s4tVX</small>-->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Start Mining</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <p>Fill in a payout address, pick a donation percentage and connect your miner.</p>
+                <p>That's all, fully anonymous!</p>
+                <br/>
+                <form>
+                  <div class="field">
+                    <label style="min-width:100px">Address: </label>
+                    <input id="address" type="text" style="min-width:300px"/>
+                  </div>
+                  <div class="field">
+                    <label style="min-width:100px">Donation: </label>
+                    <select id="donation" style="min-width:300px">
+                      <option value="03">  3 %</option>
+                      <option value="05">  5 %</option>
+                      <option value="08">  8 %</option>
+                      <option value="0d"> 13 %</option>
+                      <option value="15"> 21 %</option>
+                      <option value="22"> 34 %</option>
+                      <option value="37"> 55 %</option>
+                      <option value="4f"> 79 %</option>
+                      <option value="64">100 %</option>
+                    </select>
+                  </div>
+                  <br/>
+                  <p>Stratum config:</p>
+                  <div class="field">
+                    <label style="min-width:100px">Host: </label>
+                    <input type="text" style="min-width:300px" value="stratum+tcp://137.74.40.81:3333" readonly>
+                  </div>
+                  <div class="field">
+                    <label style="min-width:100px">Username: </label>
+                    <input id="username" type="text" style="min-width:300px" readonly>
+                  </div>
+                  <div class="field">
+                    <label style="min-width:100px">Password: </label>
+                    <input id="password" type="text" style="min-width:300px" readonly>
+                  </div>
+                  <br/>
+                  <!--<div class="field">
+                    <label style="min-width:100px">cgminer: </label>
+                    <input type="text" style="min-width:300px" value="cgminer -o stratum+tcp://127.0.0.1:3333 -u 1e667ee94ea8e62c63fe59a0269bb3c091c86ca3 -p 32" readonly>
+                  </div>-->
+                </form>
+                <p><small>Use the above host, username and password to connect your miner software.</small></p>
+                <p><small>e.g. <code>cgminer -o stratum+tcp://137.74.40.81:3333 -u 6fa62388cdcf3efdcee0d7832939d96842bb89e618 -p 0d00dad4</code></small></p>
+              </div>
+                <!--<div class="col-sm-4 portfolio-item text-center">
+                    <a href="#puzzlesModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                    </a>
+                    <h3>Puzzles</h3>
+                </div>
+                <div class="col-sm-4 portfolio-item text-center">
+                    <a href="#transactionsModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                    </a>
+                    <h3>Transactions</h3>
+                </div>
+                <div class="col-sm-4 portfolio-item text-center">
+                    <a href="#contractsModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                    </a>
+                    <h3>Smart Contracts<h3/>
+                </div>
+
+                <div class="col-lg-12 text-center">
+                    <a href="https://github.com/hrobeers/peerscript-labs" class="btn btn-primary">
+                        <i class="fa fa-sign-in"></i> Enter the Lab
+                    </a>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                  <p>
+                    Peercoin Solo Pool is not a conventional mining pool.
+                    Mining shares are not pooled, and block rewards are immidiately mined to the miner's address.
+                    Meaning that the payments show immediately in the miner's wallet.
+                  </p>
+                  <p>
+                    Connect your miner and get:
+                  </p>
+                  <ul>
+                    <li>Immediate reward payouts.</li>
+                    <li>Optionally mine straight to a P2SH multisig address.</li>
+                    <li>Configurable pool donation, used for peercoin development.</li>
+                    <li>[Coming soon] Option to donate part of your block reward to trusted projects.</li>
+                  </ul>
+                  <!-- <p>
+                    You can build, test, and play, without risking your mainnet Peercoins.
+                    Meanwhile it will teach you
+                    <a href="https://en.bitcoin.it/wiki/Pay_to_script_hash" style="color:white;">P2SH</a>
+                    and non-standard scripts by example.
+                  </p> -->
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#support" class="btn btn-lg btn-outline">
+                        <!-- <i class="fa fa-download"></i> -->Support Peercoin Solo Pool
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="support">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Support</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                  <p>Connect your miner or donate to:</p>
+                  <p>PMine9zTvqagq7HFWWEJvDjM7ZueQJJCZG</p>
+                </div>              
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <!-- <h3>Location</h3>
+                        <p>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</p> -->
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <!-- <h3>Around the Web</h3> -->
+                        <ul class="list-inline">
+                            <li>
+                                <a href="http://twitter.com/hrobeers" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://peercoin.chat/channel/mining" class="btn-social btn-outline"><i class="fa fa-fw fa-rocket"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <!-- <h3>About Freelancer</h3>
+                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; hrobeers 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="puzzlesModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Puzzles</h2>
+                            <hr class="star-primary">
+                            <p>
+                              Puzzles are funds locked by a script puzzle.
+                              One can lock a certain amount of Peercoins that can be spent by anyone knowing the solution to: x + 5 = 6.<br/>
+                              This section contains a set of puzzles that you can solve to earn some Peercoins.<br/>
+                              After solving a puzzle, we kindly ask you to create a new puzzle for other people to solve and add it to this project by creating a pull request on github.
+                            </p>
+                            <ul class="list-inline item-details">
+                                <li>
+                                  <button type="button" class="btn btn-primary" onclick="run('Puzzles')"><i class="fa fa-play"></i> Run Puzzles</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="transactionsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Transactions</h2>
+                            <hr class="star-primary">
+                            <!-- <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt=""> -->
+                            <p>
+                              The Transactions section demonstrates how standard transactions are assembled for specific blockchain use cases.
+                              <li>
+                                <ul>PeerAssets: A KISS protocol to issue asset tokens on Bitcoin compatible blockchains.</ul>
+                              </li>
+                            </p>
+
+                            <ul class="list-inline item-details">
+                                <li>
+                                  <button type="button" class="btn btn-primary" onclick="run('Transactions')"><i class="fa fa-play"></i> Run Transactions</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="contractsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Smart Contracts</h2>
+                            <hr class="star-primary">
+                            <!-- <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt=""> -->
+                            <p>
+                              Smart Contracts are used to lock funds under certain conditions.
+                              Choosing these conditions wisely allows for the creation of specialized trustless contracts.
+                              The complexity of a contract can vary from a simple escrow transaction to trustless cross chain trading.
+                              This section demonstrates how those contracts are built on the Peercoin blockchain.
+                            </p>
+
+                            <ul class="list-inline item-details">
+                                <li>
+                                  <button type="button" class="btn btn-primary" onclick="run('Smart Contracts')"><i class="fa fa-play"></i> Run Contracts</button>
+                                </li>
+                                <li>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+    <!-- Run the Smart Contracts -->
+    <script src="vendor.js"></script>
+    <script>Buffer = require('buffer').Buffer</script>
+    <script src="app.js"></script>
+    <script>
+      require('init');
+    </script>
+
+</body>
+
+</html>
